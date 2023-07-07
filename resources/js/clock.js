@@ -1,3 +1,11 @@
+const slider = document.getElementById('slider');
+const clockContainer = document.getElementById('clock-container');
+
+slider.addEventListener('click', () => {
+  clockContainer.style.color = slider.checked ? 'hsla(155, 98%, 50%, 50%)' : 'hsla(155, 98%, 50%, 100%)';
+  clockContainer.style.textShadow = slider.checked ? 'none' : '0.2em 0.2em 0.2em hsla(155, 98%, 50%, 50%)';
+});
+
 function getAmPm(hours) {
   return hours > 11 ? 'PM' : 'AM';
 }

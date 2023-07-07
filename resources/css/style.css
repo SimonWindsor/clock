@@ -32,11 +32,9 @@ main {
   grid-template: 4fr 1fr / 7fr 1fr;
   height: 13em;
   width: 28em;
-  background-color: hsl(120, 19%, 15%);
-}
-
-#clock-container > div {
-  color: rgb(3, 252, 148)
+  background-color: #1f2e1f;
+  color: hsla(155, 98%, 50%, 100%);
+  text-shadow: 0.2em 0.2em 0.2em hsla(155, 98%, 50%, 50%);
 }
 
 #time {
@@ -56,4 +54,40 @@ main {
 #day-date {
   font-family: noto-regular, sans-serif;
   padding: 0 0 0.8em 0.8em;
+}
+
+#slider {
+  display: none;
+}
+
+#slider + label {
+  position: relative;
+  right: 0.5em;
+  height: 1.5em;
+  width: 4em;
+  background-color: hsla(155, 98%, 50%, 100%);
+  border-radius: 0.75em;
+  box-shadow: 0.2em 0.2em 0.2em hsla(155, 98%, 50%, 50%);
+  cursor: pointer;
+}
+
+#slider:checked + label {
+  background-color: hsla(155, 98%, 50%, 50%);
+  box-shadow: none;
+}
+
+#slider + label > div {
+  position: relative;
+  height: 1em;
+  width: 1em;
+  margin: 0.25em;
+  background-color: #423e3e;
+  border-radius: 50%;
+  transition: ease-out 200ms;
+}
+
+
+
+#slider:checked + label > div {
+  transform: translateX(2.5em);
 }
