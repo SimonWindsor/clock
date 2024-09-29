@@ -72,11 +72,6 @@ main {
   cursor: pointer;
 }
 
-/* #slider:checked + label {
-  background-color: hsla(155, 98%, 50%, 50%);
-  box-shadow: none;
-} */
-
 #slider + label > div {
   position: relative;
   height: 1em;
@@ -86,8 +81,6 @@ main {
   border-radius: 50%;
   transition: ease-out 200ms;
 }
-
-
 
 #slider:checked + label > div {
   transform: translateX(2.5em);

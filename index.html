@@ -9,13 +9,16 @@
 <body>
   <main>
     <div id="clock-container">
+      <!-- Displays time in common format, with colon separating minutes adn hours -->
       <div id="time"></div>
+      <!-- Displays AM, PM or 24 if in 24 hour mode -->
       <div id="am-pm-24"></div>
+      <!-- Shows the current day, date and month -->
       <div id="day-date"></div>
-      <input type="checkbox" id="slider" />
-      <label for="slider"><div></div></label>
+      <!-- Slider for changing from 12 to 24 hour time -->
+      <input type="checkbox" id="slider" aria="Switch between 12 adn 24 hour time"/>
+      <label for="slider"><div></div></label> 
     </div>
-    <div id="full-date"></div>
   </main>
   <script src="resources/js/clock.js"></script>
 </body>
