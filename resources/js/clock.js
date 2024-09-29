@@ -1,13 +1,16 @@
 const slider = document.getElementById('slider');
 const clockContainer = document.getElementById('clock-container');
+let twentyFourHours = false;
 
 slider.addEventListener('click', () => {
-  clockContainer.style.color = slider.checked ? 'hsla(155, 98%, 50%, 50%)' : 'hsla(155, 98%, 50%, 100%)';
-  clockContainer.style.textShadow = slider.checked ? 'none' : '0.2em 0.2em 0.2em hsla(155, 98%, 50%, 50%)';
+  twentyFourHours = slider.checked ? true : false;
 });
 
 function getAmPm(hours) {
-  return hours > 11 ? 'PM' : 'AM';
+  if(!twentyFourHours)
+    return hours > 11 ? 'PM' : 'AM';
+  else
+    return '24';
 }
 
 function formatHours(hours) {
@@ -93,14 +96,13 @@ function getDayAndDate(date) {
 
 function showTime() {
   const date = new Date;
-  const amPm = getAmPm(date.getHours());
-  const hours = formatHours(date.getHours());
+  const amPm24 = getAmPm(date.getHours());
+  const hours = twentyFourHours ? date.getHours() : formatHours(date.getHours());
   const minutes = formatMinutes(date.getMinutes());
 
   document.getElementById('time').innerHTML = `${hours}:${minutes}`;
-  document.getElementById('am-pm').innerHTML = amPm;
+  document.getElementById('am-pm-24').innerHTML = amPm24;
   document.getElementById('day-date').innerHTML = getDayAndDate(date);
-  //document.getElementById('full-date').innerHTML = date;
 }
 
 const update = setInterval(showTime, 1000)

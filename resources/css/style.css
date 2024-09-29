@@ -46,7 +46,7 @@ main {
   padding-right: 0.2em;
 }
 
-#am-pm {
+#am-pm-24 {
   font-family: noto-extra-bold-italic, sans-serif;
   font-size: 2em;
   padding-top: 0.5em;
@@ -72,10 +72,10 @@ main {
   cursor: pointer;
 }
 
-#slider:checked + label {
+/* #slider:checked + label {
   background-color: hsla(155, 98%, 50%, 50%);
   box-shadow: none;
-}
+} */
 
 #slider + label > div {
   position: relative;
